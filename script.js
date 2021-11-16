@@ -29,7 +29,31 @@ document.getElementById("mobile")
     .addEventListener("keyup", function (e) {
         if (e.keyCode === 13) {
             e.preventDefault();
-            next('mobile', 'address');
+            next('mobile', 'unit');
+        }
+    });
+
+document.getElementById("unit")
+    .addEventListener("keyup", function (e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            next('unit', 'usage');
+        }
+    });
+
+document.getElementById("usage")
+    .addEventListener("keyup", function (e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            next('usage', 'finance');
+        }
+    });
+
+document.getElementById("finance")
+    .addEventListener("keyup", function (e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            next('finance', 'address');
         }
     });
 
@@ -37,7 +61,46 @@ function next(from, to) {
     error.innerHTML = "";
     let value = document.getElementById(from).children[1].value;
 
-    if (!value || value === "") {
+    if (from === "unit") {
+        let unit = document.querySelector('input[name="unit"]:checked');
+
+        if (!unit && to === "usage") {
+            error.innerHTML = "Please select an option";
+
+            return;
+        }
+
+        error.innerHTML = "";
+        document.getElementById(from).classList.remove('is-visible');
+        document.getElementById(to).classList.add('is-visible');
+    }
+    else if (from === "usage") {
+        let unit = document.querySelector('input[name="usage"]:checked');
+
+        if (!unit && to === "finance") {
+            error.innerHTML = "Please select an option";
+
+            return;
+        }
+
+        error.innerHTML = "";
+        document.getElementById(from).classList.remove('is-visible');
+        document.getElementById(to).classList.add('is-visible');
+    }
+    else if (from === "finance") {
+        let unit = document.querySelector('input[name="finance"]:checked');
+
+        if (!unit) {
+            error.innerHTML = "Please select an option";
+
+            return;
+        }
+
+        error.innerHTML = "";
+        document.getElementById(from).classList.remove('is-visible');
+        document.getElementById(to).classList.add('is-visible');
+    }
+    else if (!value || value === "") {
         error.innerHTML = "Please enter a value";
     }
     else {

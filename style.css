@@ -67,6 +67,11 @@ label.label-heading p {
     color: white;
 }
 
+label.label-small p {
+    font-size: 15px;
+    color: white;
+}
+
 /* animation for the text to float up */
 
 label .label-text {
@@ -213,6 +218,15 @@ label.label-heading {
     text-align: center;
 }
 
+label.label-small {
+    display: block;
+    padding: 5px 5px;
+    font-size: 15px;
+    margin: 3%;
+    color: #f0f0f0;
+    text-align: center;
+}
+
 .nav-btn-div {
     margin-top: 2rem;
     color: #ffffff;
@@ -238,6 +252,10 @@ label.label-heading {
     label.label-heading {
         font-size: 35px;
     }
+
+    label.label-small {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 670px) {
@@ -250,6 +268,11 @@ label.label-heading {
     label.label-heading {
         font-size: 18px;
         margin-bottom: 11%;
+    }
+
+    label.label-small {
+        font-size: 15px;
+        margin-bottom: 5%;
     }
 
     h1 {

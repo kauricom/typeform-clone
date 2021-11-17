@@ -29,7 +29,15 @@ document.getElementById("mobile")
     .addEventListener("keyup", function (e) {
         if (e.keyCode === 13) {
             e.preventDefault();
-            next('mobile', 'unit');
+            next('mobile', 'address');
+        }
+    });
+
+document.getElementById("address")
+    .addEventListener("keyup", function (e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            next('address', 'unit');
         }
     });
 
@@ -53,7 +61,7 @@ document.getElementById("finance")
     .addEventListener("keyup", function (e) {
         if (e.keyCode === 13) {
             e.preventDefault();
-            next('finance', 'address');
+            next('finance', 'reason');
         }
     });
 
@@ -87,7 +95,7 @@ function next(from, to) {
         document.getElementById(from).classList.remove('is-visible');
         document.getElementById(to).classList.add('is-visible');
     }
-    else if (from === "finance" && to === "address") {
+    else if (from === "finance" && to === "reason") {
         let unit = document.querySelector('input[name="finance"]:checked');
 
         if (!unit) {

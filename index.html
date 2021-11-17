@@ -75,7 +75,23 @@
 
                     <div class="nav-btn-div">
                         <i class="fa fa-arrow-up" style="font-size:24px" onclick="previous('mobile', 'email')"></i>
-                        <i class="fa fa-arrow-down" style="font-size:24px" onclick="next('mobile','unit')"></i>
+                        <i class="fa fa-arrow-down" style="font-size:24px" onclick="next('mobile','address')"></i>
+                    </div>
+                </label>
+
+                <label id="address">
+                    <label class="label-heading" for="address">What's your address?</label>
+                    <input name="address" id="address-box" type="text" placeholder="address" required />
+                    <br>
+                    <div class="nav-btn-div">
+                        <button type="button" class="nav-button" value="next" onclick="next('address','unit')">OK <i
+                                class="fa fa-check" aria-hidden="true"></i></button>
+                        Press <strong>Enter ↵</strong>
+                    </div>
+
+                    <div class="nav-btn-div">
+                        <i class="fa fa-arrow-up" style="font-size:24px" onclick="previous('address', 'mobile')"></i>
+                        <i class="fa fa-arrow-down" style="font-size:24px" onclick="next('address','unit')"></i>
                     </div>
                 </label>
 
@@ -106,7 +122,7 @@
                     </div>
 
                     <div class="nav-btn-div">
-                        <i class="fa fa-arrow-up" style="font-size:24px" onclick="previous('unit', 'mobile')"></i>
+                        <i class="fa fa-arrow-up" style="font-size:24px" onclick="previous('unit', 'address')"></i>
                         <i class="fa fa-arrow-down" style="font-size:24px" onclick="next('unit','usage')"></i>
                     </div>
                 </label>
@@ -151,23 +167,8 @@
 
                     <br>
                     <div class="nav-btn-div">
-                        <button type="button" class="nav-button" value="next" onclick="next('finance','address')">OK <i
-                                class="fa fa-check" aria-hidden="true"></i></button>
-                        Press <strong>Enter ↵</strong>
-                    </div>
-
-                    <div class="nav-btn-div">
                         <i class="fa fa-arrow-up" style="font-size:24px" onclick="previous('finance', 'usage')"></i>
-                        <i class="fa fa-arrow-down" style="font-size:24px" onclick="next('finance','address')"></i>
-                    </div>
-                </label>
 
-                <label id="address">
-                    <label class="label-heading" for="address">What's your address?</label>
-                    <input name="address" id="address-box" type="text" placeholder="address" required />
-                    <br>
-                    <div class="nav-btn-div">
-                        <i class="fa fa-arrow-up" style="font-size:24px" onclick="previous('address','finance')"></i>
                         <button id="submit-button" class="nav-button">Submit</button>
                     </div>
                 </label>
@@ -206,8 +207,7 @@
                 zip: params.zip,
                 unit: document.querySelector('input[name="unit"]:checked').value,
                 usage: document.querySelector('input[name="usage"]:checked').value,
-                finance: document.querySelector('input[name="finance"]:checked').value === 'Yes',
-                reason: 'NONE'
+                finance: document.querySelector('input[name="finance"]:checked').value === 'Yes'
             }
 
             $.ajax({

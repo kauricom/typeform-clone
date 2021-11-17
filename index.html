@@ -195,22 +195,31 @@
             if (params == undefined)
                 return;
 
-            const body = {
+            let body = {
                 firstname: document.getElementById('firstname-input').value,
                 surname: document.getElementById('surname-input').value,
                 email: document.getElementById('email-input').value,
+                phone: document.getElementById('mobile-input').value,
                 street: params.street,
                 city: params.city,
                 state: params.state,
                 zip: params.zip,
-                units: document.querySelector('input[name="unit"]:checked').value,
+                unit: document.querySelector('input[name="unit"]:checked').value,
                 usage: document.querySelector('input[name="usage"]:checked').value,
-                finance: document.querySelector('input[name="finance"]:checked').value === 'Yes'
+                finance: document.querySelector('input[name="finance"]:checked').value === 'Yes',
+                reason: 'NONE'
             }
 
-            $.post('https://httpdump.io/6lfxw', body, (data) => {
-                window.location.params = '';
-                window.location.pathname = '/thank-you';
+            $.ajax({
+                url: 'https://sonderpods.com/wp-json/zoho-module-bind/v1/create-lead?token=default',
+                type: 'POST',
+                data: JSON.stringify(body),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                complete: (xhr, status) => {
+                    window.location.params = '';
+                    window.location.replace('https://sonderpods.com/contact-thankyou/');
+                }
             });
 
             e.preventDefault();

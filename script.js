@@ -74,7 +74,7 @@ function next(from, to) {
         document.getElementById(from).classList.remove('is-visible');
         document.getElementById(to).classList.add('is-visible');
     }
-    else if (from === "usage") {
+    else if (from === "usage" && to === "finance") {
         let unit = document.querySelector('input[name="usage"]:checked');
 
         if (!unit && to === "finance") {
@@ -87,7 +87,7 @@ function next(from, to) {
         document.getElementById(from).classList.remove('is-visible');
         document.getElementById(to).classList.add('is-visible');
     }
-    else if (from === "finance") {
+    else if (from === "finance" && to === "address") {
         let unit = document.querySelector('input[name="finance"]:checked');
 
         if (!unit) {

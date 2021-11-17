@@ -19,7 +19,7 @@
                 <label id="firstname" class="is-visible">
                     <label class="label-heading" for="firstname">What's your firstname?</label>
                     <input id="firstname-input" name="name" type="text" placeholder="firstname" required />
-
+                    <br>
                     <div class="nav-btn-div">
                         <button type="button" class="nav-button" value="next" onclick="next('firstname','surname')">OK
                             <i class="fa fa-check" aria-hidden="true"></i></button>
@@ -34,7 +34,7 @@
                 <label id="surname">
                     <label class="label-heading" for="surname">What's your surname?</label>
                     <input id="surname-input" name="name" type="text" placeholder="surname" required />
-
+                    <br>
                     <div class="nav-btn-div">
                         <button type="button" class="nav-button" value="next" onclick="next('surname','email')">OK
                             <i class="fa fa-check" aria-hidden="true"></i></button>
@@ -98,22 +98,18 @@
                 <label id="unit">
                     <label class="label-heading" for="mobile">Which Unit Are You Interested In?</label>
 
-                    <div>
-                        <input type="radio" id="unit-1" name="unit" value="2 Bedroom SP750">
-                        <label class="label-small" for="unit-1">2 Bedroom SP750</label>
+                    <label class="label-small" for="unit-1">2 Bedroom SP750</label>
+                    <input type="radio" id="unit-1" name="unit" value="2 Bedroom SP750">
 
-                        <input type="radio" id="unit-2" name="unit" value="1 Bedroom SP540">
-                        <label class="label-small" for="unit-2">1 Bedroom SP540</label>
+                    <label class="label-small" for="unit-2">1 Bedroom SP540</label>
+                    <input type="radio" id="unit-2" name="unit" value="1 Bedroom SP540">
 
-                        <input type="radio" id="unit-3" name="unit" value="1 Bedroom SP430">
-                        <label class="label-small" for="unit-3">1 Bedroom SP430</label>
+                    <label class="label-small" for="unit-3">1 Bedroom SP430</label>
+                    <input type="radio" id="unit-3" name="unit" value="1 Bedroom SP430">
 
-                        <input type="radio" id="unit-4" name="unit"
-                            value="Don't know yet, I would like to understand my options">
-                        <label class="label-small" for="unit-4">Don't know yet, I would like to understand my
-                            options</label>
-                    </div>
-
+                    <label class="label-small" for="unit-4">Don't know yet, I would like to understand my
+                        options</label>
+                    <input type="radio" id="unit-4" name="unit" value="Don't know yet, I would like to understand my options">
                     <br>
                     <div class="nav-btn-div">
                         <button type="button" class="nav-button" value="next" onclick="next('unit','usage')">OK <i
@@ -129,18 +125,17 @@
 
                 <label id="usage">
                     <label class="label-heading" for="mobile">What's your intended usage?</label>
-
                     <div>
-                        <input type="radio" id="usage-1" name="usage" value="Rental income">
                         <label class="label-small" for="usage-1">Rental Income</label>
+                        <input class="custom_radio" type="radio" id="usage-1" name="usage" value="Rental income">
 
-                        <input type="radio" id="usage-2" name="usage" value="Family member">
                         <label class="label-small" for="usage-2">Family member</label>
+                        <input class="custom_radio" type="radio" id="usage-2" name="usage" value="Family member">
 
-                        <input type="radio" id="usage-3" name="usage" value="Some fun additional space!">
                         <label class="label-small" for="usage-3">Some fun additional space!</label>
+                        <input class="custom_radio" type="radio" id="usage-3" name="usage"
+                            value="Some fun additional space!">
                     </div>
-
                     <br>
                     <div class="nav-btn-div">
                         <button type="button" class="nav-button" value="next" onclick="next('usage','finance')">OK <i
@@ -156,15 +151,13 @@
 
                 <label id="finance">
                     <label class="label-heading" for="mobile">Would you be interested in our financing services?</label>
-
                     <div>
-                        <input type="radio" id="finance-1" name="finance" value="Yes">
                         <label class="label-small" for="finance-1">Yes</label>
+                        <input type="radio" id="finance-1" name="finance" value="Yes">
 
-                        <input type="radio" id="finance-2" name="finance" value="No">
                         <label class="label-small" for="finance-2">No</label>
+                        <input type="radio" id="finance-2" name="finance" value="No">
                     </div>
-
                     <br>
                     <div class="nav-btn-div">
                         <i class="fa fa-arrow-up" style="font-size:24px" onclick="previous('finance', 'usage')"></i>

@@ -168,7 +168,7 @@
                     </div>
                 </label>
 
-                <p id="validate"></p>
+                <p id="validate" style="color:#dedede"></p>
             </form>
         </section>
     </div>
@@ -188,8 +188,15 @@
         let params = undefined;
 
         $("#contact-form").submit((e) => {
+            e.preventDefault();
+
             if (params == undefined)
-                return;
+                return false;
+
+            if (!document.querySelector('input[name="unit"]:checked') ||
+                !document.querySelector('input[name="usage"]:checked') ||
+                !document.querySelector('input[name="finance"]:checked'))
+                return false;
 
             let body = {
                 firstname: document.getElementById('firstname-input').value,
@@ -206,18 +213,18 @@
             }
 
             $.ajax({
-                url: 'https://sonderpods.com/wp-json/zoho-module-bind/v1/create-lead?token=default',
+                url: 'https://example.com/submit',
                 type: 'POST',
                 data: JSON.stringify(body),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 complete: (xhr, status) => {
-                    window.location.params = '';
-                    window.location.replace('https://sonderpods.com/contact-thankyou/');
+                    window.top.location.params = '';
+                    window.top.location.replace('https://example.com/contact-thankyou/');
                 }
             });
 
-            e.preventDefault();
+            return false;
         });
 
         const initialize = () => {
@@ -280,6 +287,8 @@
 
         google.maps.event.addDomListener(window, "load", initialize);
     </script>
+
+    <script type="text/javascript" src="/wp-content/uploads/custom-css-js/iframeResizer.contentWindow.min.js"></script>
 </footer>
 
 </html>

@@ -187,6 +187,8 @@
     <script>
         let params = undefined;
 
+        let completed = false;
+
         $("#contact-form").submit((e) => {
             e.preventDefault();
 
@@ -211,6 +213,11 @@
                 usage: document.querySelector('input[name="usage"]:checked').value,
                 finance: document.querySelector('input[name="finance"]:checked').value === 'Yes'
             }
+
+            if (completed)
+                return false;
+
+            completed = true;
 
             $.ajax({
                 url: 'https://example.com/submit',
